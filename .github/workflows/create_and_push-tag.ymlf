@@ -3,7 +3,7 @@ name: Create and Push Tag
 on:
   push:
     branches:
-      - main
+      - hcherif-1-testbranch
 
 jobs:
   create_and_push_tag:
