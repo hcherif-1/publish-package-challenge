@@ -1,0 +1,23 @@
+name: Create and Push Tag
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_and_push_tag:
+    name: Create and Push Tag
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+    - name: Set up Git
+      run: |
+        git config --global user.name "Me"
+        git config --global user.email "me@example.com"
+    - name: Create and Push Tag
+      run: |
+        git tag -a v1.0.0 -m "Tagging v1.0.0 release"
+        git push origin v1.0.0
