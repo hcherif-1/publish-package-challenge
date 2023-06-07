@@ -3,6 +3,9 @@ name: Node.js Package
 on:
   release:
     types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -13,8 +16,6 @@ jobs:
         with:
           node-version: 16
       - run: |
-         cd /home/publish-package-challenge/
-         npm init -y
          npm ci
          npm test
 
