@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 16
       - run: |
-         cd ./publish-package-challenge/sample-packages/
+         cd /home/publish-package-challenge/
          npm init -y
          npm ci
          npm test
